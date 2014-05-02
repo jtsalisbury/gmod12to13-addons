@@ -1,4 +1,4 @@
-pcmod2
+GMOD Addons
 ======
 
-PCMod 2 for GMod 13
+A collection of addons I've updated from GMod 12 to GMod 13
