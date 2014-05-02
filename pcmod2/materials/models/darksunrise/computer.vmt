@@ -1,0 +1,7 @@
+VertexLitGeneric
+{
+	"$basetexture"	"models\darksunrise\computer"
+	"$envmap" "env_cubemap"
+	"$envmapmask" "models\darksunrise\computer_ref"
+
+}
