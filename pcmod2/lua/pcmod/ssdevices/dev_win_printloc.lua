@@ -33,7 +33,8 @@ function DEV:Paint( x, y, w, h )
 	self:RenderWindow( self.Th, x, y, w, h, "Print File", h*0.1 )
 	self:Draw()
 	self:RenderText( x+(w*0.5), y+(h*0.12), { "Select a location to print to.", "An IP address is acceptable.", "Use 'local' to print locally." }, Color( 0, 0, 0, 255 ), 1 )
-	if (PCMod.SDraw.DevParams[ self:EntIndex()][ "window_printloc" ][ 1 ]) then
+	
+	if (PCMod.SDraw.DevParams[self.Entity:EntIndex()][ "window_printloc" ][ 1 ]) then
 		self:RenderError( self.Th, x+(w*0.5), y+(h*0.45), "You have unsaved changes" )
 		self:RenderError( self.Th, x+(w*0.5), y+(h*0.55), "These changes wont print" )
 	end
