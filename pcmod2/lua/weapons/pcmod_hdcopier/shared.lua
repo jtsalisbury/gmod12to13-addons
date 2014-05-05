@@ -80,19 +80,21 @@ function SWEP:Think()
 end
 
 function SWEP:Deploy()
-	local ply = self.Owner
-	if ((!ply) || (!ply:IsValid())) then return end
-	local dat = PCMod.PLD.GetPlyData( ply )
-	if (!dat) then return end
-	if (!dat.HDrives) then dat.HDrives = {} end
-	local cnt
-	for cnt=1, 4 do
-		if (dat.HDrives[ cnt ]) then
-			self.Slots[ cnt ] = true
-			self:SetNWBool( "slot_" .. tostring( cnt ), true )
-		else
-			self.Slots[ cnt ] = false
-			self:SetNWBool( "slot_" .. tostring( cnt ), false )
+	if (SERVER) then
+		local ply = self.Owner
+		if ((!ply) || (!ply:IsValid())) then return end
+		local dat = PCMod.PLD.GetPlyData( ply )
+		if (!dat) then return end
+		if (!dat.HDrives) then dat.HDrives = {} end
+		local cnt
+		for cnt=1, 4 do
+			if (dat.HDrives[ cnt ]) then
+				self.Slots[ cnt ] = true
+				self:SetNWBool( "slot_" .. tostring( cnt ), true )
+			else
+				self.Slots[ cnt ] = false
+				self:SetNWBool( "slot_" .. tostring( cnt ), false )
+			end
 		end
 	end
 end
