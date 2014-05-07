@@ -1,0 +1,13 @@
+"AddonInfo"
+{
+	"name"		"Gamemode SENT"
+	"version"	"0.1"
+	"up_date"	""
+	"author_name"	"James"
+	"author_email"	""
+	"author_url"	""
+	
+	"info"		""
+	"override"	"0"
+
+}
