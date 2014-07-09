@@ -1,0 +1,12 @@
+"AddonInfo"
+{
+	"name"		"G.GUN"
+	"version"	"1.1"
+	"up_date"	""
+	"author_name"	"Griba, Silenced dude, Hiyougami, Zacmeeks "
+	"author_email"	""
+	"author_url"	""
+	"info"		""
+	"override"	"0"
+
+}

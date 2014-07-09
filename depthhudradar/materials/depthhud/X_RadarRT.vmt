@@ -1,0 +1,7 @@
+"UnlitGeneric"
+{
+	"$baseTexture" "depthhud/radarrt_placeholder"
+	
+	"$vertexcolor" 1
+	"$vertexalpha" 1
+}

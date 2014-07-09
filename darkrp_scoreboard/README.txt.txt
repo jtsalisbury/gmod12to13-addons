@@ -1,0 +1,1 @@
+You have to disable fadmin in the darkrp modification addon under disabled_defaults

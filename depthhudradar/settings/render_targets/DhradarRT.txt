@@ -1,0 +1,6 @@
+"DhradarRT"
+{
+	"Name"		"DhradarRT"
+	"Width"		"128"
+	"Height"	"128"
+}

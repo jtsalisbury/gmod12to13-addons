@@ -1,0 +1,53 @@
+BEACON.Name        = "Easy Base"
+BEACON.Scale       = 2.5
+BEACON.Color       = Color(0,255,0,255)
+BEACON.Sprite      = texture_sp_arrowsignal
+BEACON.AngleIsEntityYaw        = false
+BEACON.AngleIsRadarOrientation = true
+BEACON.AngleAdd                = 0
+BEACON.DrawShadow      = true
+BEACON.IsDrawnOneTime  = true
+
+BEACON.spriteScale = nil
+BEACON.spriteColor = nil
+BEACON.isup        = nil
+BEACON.sprite      = nil
+BEACON.spriteAngle = nil
+
+
+function BEACON:FindFunction( entities , myTrashTable )
+	/*
+	for k,ent in pairs(entities) do
+		if string.find(ent:GetClass(),"prop_") and string.find(ent:GetClass(),"vehicle") then
+			table.insert(myTrashTable,ent)
+		end
+	end
+	*/
+	if self.IsDrawnOneTime then
+		myTrashTable = { LocalPlayer() }
+	end
+	return myTrashTable
+end
+
+function BEACON:DrawFunction( ent )
+	local angle,dist,isup = calcGetPolar( ent:GetPos() )
+	local spriteScale     = self.Scale
+	local spriteColor     = self.Color
+	local sprite          = self.Sprite
+	local spriteAngle     = 0
+	
+	if (self.AngleIsEntityYaw) then
+		spriteAngle  = ent:GetAngles().y - EyeAngles().y + 90 + self.AngleAdd
+	elseif (self.AngleIsRadarOrientation) then
+		spriteAngle  = -EyeAngles().y + 90 + self.AngleAdd
+	else
+		spriteAngle  = 0 + self.AngleAdd
+	end
+	
+	if (self.DrawShadow) then
+		drawPin(sprite, angle, dist+0.01, Color(0,0,0,spriteColor.a*0.5) ,      spriteScale, spriteAngle, true, 0.5)
+	end
+	drawPin(    sprite, angle, dist     , spriteColor                    , 0.95*spriteScale, spriteAngle, true, 0.5)
+	
+	return true
+end

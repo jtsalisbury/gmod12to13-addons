@@ -1,0 +1,6 @@
+"VertexLitGeneric"
+{
+	"$basetexture" "arc/Injector"
+	"$model" 1
+	"$surfaceprop" "metal"
+}

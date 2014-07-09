@@ -1,0 +1,2 @@
+1.24
+Critical Update : Attempt to resolve huge stuttering on map corners. - New beacons : Player Line of Fire, Farseer Indicator. - http://www.facepunch.com/showthread.php?p=16524809
