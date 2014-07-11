@@ -5,8 +5,13 @@ util.AddNetworkString("DriveBy_CloseMenu");
 net.Receive("Driveby_Toggle", function(len, client)
 	local curState = client.DriveByState or false;
 	local newState = !curState;
+	if (!client:CanDriveBy()) then return; end
 
 	client:SetAllowWeaponsInVehicle(newState);
+
+	local veh = client:GetVehicle();
+	client:ExitVehicle();
+	client:EnterVehicle(veh);
 
 	client.DriveByState = newState;
 	client:SetNWBool("DriveByState", newState);
