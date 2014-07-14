@@ -5,8 +5,6 @@ registered_teams = {};
 hook.Add("PlayerCanHearPlayersVoice", "CanSameTeamHearEachOther", function(plyOne, plyTwo)
 	for k,v in pairs(registered_teams) do
 		if (v[plyOne:Team()] && v[plyTwo:Team()] && plyOne:GetNWInt("GroupChatActivated", 0) == 1 && plyTwo:GetNWInt("GroupChatActivated", 0) == 1) then
-						print("TALKING");
-
 			return true;
 		end
 	end
