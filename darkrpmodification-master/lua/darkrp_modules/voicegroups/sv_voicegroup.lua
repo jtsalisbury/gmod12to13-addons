@@ -1,6 +1,4 @@
-util.AddNetworkString("ToggleMessage");
-
-registered_teams = {};
+local registered_teams = {};
 
 hook.Add("PlayerCanHearPlayersVoice", "CanSameTeamHearEachOther", function(plyOne, plyTwo)
 	for k,v in pairs(registered_teams) do
